@@ -12,7 +12,7 @@ Revision.from_xml = function from_xml(old){
   pojo.author = old.author[0];
   pojo.date = new Date(old.date[0]);
   pojo.message = old.msg[0];
-  pojo.paths = old.paths[0].path.map(function(path){ return path._;}); // filename
+  pojo.paths = old.paths[0].path.map(function(path){ return `${path.$.kind}\t${path.$.action}\t${path._}`;});
   return new Revision(pojo);
 };
 
